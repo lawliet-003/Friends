@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ChatMainPage } from './Chat/ChatList/Chat-main-page.component';
+import { API_BASE_URL, Client } from './Chat/apibase';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,15 @@ import { ChatMainPage } from './Chat/ChatList/Chat-main-page.component';
       {path:'Chat',component:ChatMainPage}
     ])
   ],
-  providers: [],
+  providers: [{
+    
+      provide: API_BASE_URL,
+      useFactory: () => {
+                    return environment.API_BASE_URL;
+             }
+      }
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
