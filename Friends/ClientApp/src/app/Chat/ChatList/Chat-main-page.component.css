@@ -1,0 +1,28 @@
+div{
+    margin: 0%;
+}
+.contact-List {
+    border: 2px solid #dedede;
+    background-color: #70689b;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .contact-List img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+    max-width: max-content;
+  }
+  .time-right {
+    float: right;
+    color: #aaa;
+  }
+
+  p{
+    margin-top: 6px;
+    margin-bottom: 1rem;
+  }

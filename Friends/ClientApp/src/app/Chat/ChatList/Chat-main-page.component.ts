@@ -7,8 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatMainPage implements  OnInit{
   
-    FriendsList:any = ["Rohit","Mohit","KK","jj"];
+    FriendsList = [{"name":"Rohit","image":"","Lasttext":"hello","LastTextTime":"22:07"},{"name":"Rohit","image":"","Lasttext":"hello","LastTextTime":"22:07"}];
+    CopyFriendList =  [{"name":"Rohit","image":"","Lasttext":"hello","LastTextTime":"22:07"},{"name":"Rohit","image":"","Lasttext":"hello","LastTextTime":"22:07"}];
     ngOnInit(): void {
         
+    }
+    searchText="";
+    searchContact(event:any){
+     debugger
+    //  let temp = [...this.CopyFriendList];
+      if(this.searchText.length>0){
+        this.FriendsList =[];
+        this.CopyFriendList.forEach(x=>{
+          let match =x.name.toLowerCase().search(this.searchText.toLowerCase())
+          if(match != -1){
+            this.FriendsList.push(x);
+          }
+        });
+          
+      }
+      else{
+        this.FriendsList = [...this.CopyFriendList];
+      }
+      
     }
 }
