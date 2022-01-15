@@ -1,17 +1,35 @@
 <p>Chat Main Page</p>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-3" style="border: 1px solid red;">
+<div class="container-fluid" >
+    <div class="row" style="height: 90vh;">
+        <div class="col-4" style="border: 1px solid red;">
             <p>FriendList</p>
             
+            <input type="text" placeholder="Search or start a new chat" class="w-100" [(ngModel)]="searchText" (ngModelChange)="searchContact($event)">
+       
+
+            <div *ngFor = "let friend of FriendsList">
+                    <div class="contact-List">
+                                <img src="https://www.w3schools.com/images/lamp.jpg" alt="Lamp">
+                          
+                               
+                                <div class="d-flex flex-column" style="line-height: 2px;">
+                                  <p><span style="font-family: cursive; font-size: large;">{{friend.name}}</span>            
+                                  <span class="time-right">{{friend.LastTextTime}}</span> </p>
+                                  <p>{{friend.Lasttext}}</p>  
+                                </div>
+                                            
+                                           
+                    </div>
+            </div>
+            
         </div>
-        <div class="col-6" style="border: 1px solid rgb(0, 255, 0);">
+        <div class="col-8" style="border: 1px solid rgb(0, 255, 0);">
             <p>Chat</p>
         </div>
-        <div class="col-2" style="border: 1px solid rgb(195, 0, 255);">
+       <!-- <div class="col-2" style="border: 1px solid rgb(195, 0, 255);">
             <p>Details</p>
-        </div>
+        </div>-->
     </div>
 
 </div>
